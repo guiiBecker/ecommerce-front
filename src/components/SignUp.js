@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   FormContainer,
@@ -13,8 +13,26 @@ import {
   SocialButton
 } from './SignUp.styles';
 import plantImage from '../assets/images/chris-lee-70l1tDAI6rM-unsplash 1.png';
+import { signupUser } from '../api/api';
+
 
 const SignUp = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSignUp = async() => {
+    try{
+      const data = await signupUser(name, email, password);
+      console.log('Sign Up', data);
+
+      localStorage.setItem('token', data.token);
+
+    }catch(error){
+      setError('SignUpFailed')
+    };
+  }
   return (
     <Container>
       <FormContainer>

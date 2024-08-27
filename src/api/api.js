@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'localhost:4000'; // Replace with your actual API URL
+const API_URL = 'http://localhost:4000'; // Replace with your actual API URL
 
 // Function to handle user login
 export const loginUser = async (email, password) => {
@@ -20,10 +20,10 @@ export const loginUser = async (email, password) => {
 // Function to handle user signup
 export const signupUser = async (name, email, password) => {
   try {
-    const response = await axios.post(`${API_URL}/signup`, {
-      name,
+    const response = await axios.post(`${API_URL}/user`, {
       email,
-      password
+      password,
+      name,
     });
 
     return response.data; // Return the response data, typically containing the token

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 import './BillingDetails.css';
 
 const BillingDetails = () => {
@@ -16,7 +17,9 @@ const BillingDetails = () => {
 
   const [paymentMethod, setPaymentMethod] = useState('bank');
   const [isLoading, setIsLoading] = useState(false);
-  
+  const cartItems = useSelector(state => state.cart.items); // Dados do carrinho
+  const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0); // Calcular o total do carrinho
+
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
@@ -57,6 +60,7 @@ const BillingDetails = () => {
         {
           ...userInfo,
           paymentMethod,
+          cartItems, // Incluir os itens do carrinho no pedido
         },
         {
           headers: {
@@ -165,11 +169,15 @@ const BillingDetails = () => {
       </div>
       <div className="order-summary">
         <h2>Product</h2>
-        {/* Dynamically populate the order summary from the cart */}
+        {cartItems.map((item) => (
+          <div key={item.id} className="order-item">
+            <span>{item.name} x {item.quantity}</span>
+            <span>Rs. {item.price.toLocaleString()}</span>
+          </div>
+        ))}
         <div>
-          <p>{/* Product name and details here */}</p>
-          <p>Subtotal: {/* Subtotal here */}</p>
-          <p>Total: {/* Total here */}</p>
+          <p>Subtotal: Rs. {totalAmount.toLocaleString()}</p>
+          <p>Total: <strong>Rs. {totalAmount.toLocaleString()}</strong></p>
         </div>
         <div className="payment-methods">
           <label>

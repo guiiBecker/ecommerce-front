@@ -71,20 +71,25 @@
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   position: relative; /* Positioning for hover effect */
   background-color: white;
+  text-decoration: none;
+  color: black;
+
+
 }
 
 /* Image styling */
 .product-card img {
   max-width: 100%;
-  height: auto;
+  height: 60%;
   border-radius: 5px;
   transition: transform 0.3s ease; /* Transition for zoom effect on hover */
 }
 
 /* Hover effects for the product card */
 .product-card:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
-  transform: translateY(-5px); /* Slight lift on hover */
+  background-color: #d6d2d2;
+  opacity: 0.8;
+
 }
 
 /* Image zoom on hover */
@@ -93,53 +98,54 @@
 }
 
 /* Hide the add-to-cart button and social actions initially */
-.product-card .add-to-cart,
+.product-card .add-to-cartD,
 .product-card .social-actions {
-  opacity: 0;
+  opacity: 0,8;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* Show the add-to-cart button and social actions on hover */
-.product-card:hover .add-to-cart,
+.product-card:hover .add-to-cartD,
 .product-card:hover .social-actions {
-  opacity: 1;
+  opacity: 0.8;
   visibility: visible;
 }
 
 /* Add-to-cart button styling */
-.add-to-cart {
+.add-to-cartD {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ff6f61;
-  color: white;
+  background-color: white;
+  color: #B88E2F;
   padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 5px;
+  border: none;
 }
 
-.add-to-cart:hover {
-  background-color: #e65b50;
-}
+/* .add-to-cartD:hover {
+  background-color: gray;
+  opacity: 0.2;
+} */
 
 /* Social actions container (Share, Compare, Like) */
 .social-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   position: absolute;
-  bottom: 10px;
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 0 10px;
-  color: #757575;
+  padding: 0 10px 10px 10px;
+  color: black;
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.8); /* Optional: add a background for better visibility */
   border-radius: 5px;
+  bottom: 137px;
 }
 
 /* Default state for text and button visibility */
@@ -152,7 +158,7 @@
 .product-card:hover h3,
 .product-card:hover p,
 .product-card:hover .price {
-  opacity: 0.7; /* Slightly fade out text on hover */
+  opacity: 0.4; 
 }
 
   

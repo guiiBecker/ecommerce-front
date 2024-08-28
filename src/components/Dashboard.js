@@ -82,7 +82,7 @@ const Dashboard = () => {
               <p>{product.description}</p>
               <span className="price">Rp {product.price.toLocaleString()}</span>
             </Link>
-            <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to cart</button>
+            <button className="add-to-cartD" onClick={() => handleAddToCart(product)}>Add to cart</button>
             <div className="social-actions">
               <span>Share</span>
               <span>Compare</span>

@@ -89,8 +89,8 @@
   }
   
   .add-to-cart {
-    background-color: #ff6f61;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px 20px;
     border: 2px solid #000;
     border-radius: 5px;
@@ -99,7 +99,7 @@
   }
   
   .add-to-cart:hover {
-    background-color: #e55b51;
+    background-color: white;
   }
   
   .product-meta {

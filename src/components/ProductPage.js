@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../features/cart/cartSlice'
 import axios from 'axios';
 import './ProductPage.css';
+import Facebook from '../assets/images/Vectorface.jpg'
+import Linkedin from '../assets/images/Vectorlink.jpg'
+import Twitter from '../assets/images/Vectortwitter.jpg'
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -94,9 +97,9 @@ const ProductPage = () => {
           <div className="social-share">
             <span>Share:</span>
             <div className="social-icons">
-              <img src="path-to-your-facebook-icon" alt="Share on Facebook" />
-              <img src="path-to-your-twitter-icon" alt="Share on Twitter" />
-              <img src="path-to-your-linkedin-icon" alt="Share on LinkedIn" />
+              <img src={Facebook} alt="Share on Facebook" />
+              <img src={Twitter} alt="Share on Twitter" />
+              <img src={Linkedin} alt="Share on LinkedIn" />
             </div>
           </div>
         </div>

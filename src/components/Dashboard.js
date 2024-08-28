@@ -102,7 +102,6 @@ const Dashboard = () => {
           </button>
         ))}
       </div>
-      <Features/>
     </div>
   );
 };

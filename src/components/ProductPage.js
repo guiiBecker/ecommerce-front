@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../features/cart/cartSlice'
 import axios from 'axios';
 import './ProductPage.css';
 
 const ProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [quantity, setQuantity] = useState(1); 
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -24,6 +28,13 @@ const ProductPage = () => {
 
     fetchProduct();
   }, [id]);
+
+  const handleAddToCart = () => {
+    if (product) {
+      dispatch(addItem({ ...product, quantity })); 
+      alert('Produto adicionado ao carrinho!'); 
+    }
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -63,9 +74,17 @@ const ProductPage = () => {
           <div className="quantity-cart">
             <div className="quantity">
               <span>Quantity:</span>
-              <input type="number" min="1" max={product.stock} defaultValue="1" />
+              <input
+                type="number"
+                min="1"
+                max={product.stock}
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+              />
             </div>
-            <button className="add-to-cart">Add To Cart</button>
+            <button className="add-to-cart" onClick={handleAddToCart}>
+              Add To Cart
+            </button>
           </div>
           <div className="product-meta">
             <p>SKU: {product.sku}</p>

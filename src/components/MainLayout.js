@@ -30,7 +30,7 @@ const MainLayout = ({ children }) => {
       <main style={{ position: 'relative', zIndex: 1 }}>
         {children}
       </main>
-      {!isProductPage && <Features />}
+       <Features />
       <Footer />
     </div>
   );

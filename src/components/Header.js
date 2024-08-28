@@ -27,15 +27,14 @@ const Header = () => {
           <Link to="/contact" className="header__link">Contact</Link>
         </nav>
         <div className="header__icons">
-          <Link to="/profile">
+          
             <img src={userIcon} alt="User" className="header__icon" />
-          </Link>
-          <Link to="/cart">
+          
             <img src={cartIcon} alt="Cart" className="header__icon" 
             onClick={handleCartClick} 
             style={{ cursor: 'pointer' }} 
             />
-          </Link>
+          
         </div>
       </header>
     );

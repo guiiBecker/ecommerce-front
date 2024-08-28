@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import './Dashboard.css';
 import Features from './Features';
+import { addItem } from '../features/cart/cartSlice'; // Correctly import the addItem action
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
@@ -10,6 +12,7 @@ const Dashboard = () => {
   const [sortOption, setSortOption] = useState('Default');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 16;
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -21,7 +24,7 @@ const Dashboard = () => {
           }
         });
         setProducts(response.data);
-        setFilteredProducts(response.data); // Initialize filtered products
+        setFilteredProducts(response.data); 
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -30,18 +33,15 @@ const Dashboard = () => {
     fetchProducts();
   }, []);
 
-  // Filter products based on current filter settings
   useEffect(() => {
     let updatedProducts = [...products];
 
-    // Sorting
     if (sortOption === 'Price') {
       updatedProducts.sort((a, b) => a.price - b.price);
     } else if (sortOption === 'Name') {
       updatedProducts.sort((a, b) => a.name.localeCompare(b.name));
     }
 
-    // Pagination logic
     const indexOfLastProduct = currentPage * showCount;
     const indexOfFirstProduct = indexOfLastProduct - showCount;
     const currentProducts = updatedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -51,7 +51,7 @@ const Dashboard = () => {
 
   const handleShowChange = (event) => {
     setShowCount(parseInt(event.target.value, 10));
-    setCurrentPage(1); // Reset to the first page
+    setCurrentPage(1); 
   };
 
   const handleSortChange = (event) => {
@@ -62,31 +62,14 @@ const Dashboard = () => {
     setCurrentPage(pageNumber);
   };
 
+  const handleAddToCart = (product) => {
+    dispatch(addItem(product)); // Dispatch the correct addItem action
+  };
+
   return (
     <div className="dashboard">
       <div className="filter-bar">
-        <div className="filter">
-          <span>Filter</span>
-        </div>
-        <div className="results">
-          <span>Showing {currentPage * showCount - showCount + 1}-{Math.min(currentPage * showCount, products.length)} of {products.length} results</span>
-        </div>
-        <div className="show">
-          <span>Show</span>
-          <select value={showCount} onChange={handleShowChange}>
-            <option value={16}>16</option>
-            <option value={32}>32</option>
-            <option value={48}>48</option>
-          </select>
-        </div>
-        <div className="sort-by">
-          <span>Sort by</span>
-          <select value={sortOption} onChange={handleSortChange}>
-            <option value="Default">Default</option>
-            <option value="Price">Price</option>
-            <option value="Name">Name</option>
-          </select>
-        </div>
+        {/* Filter bar code */}
       </div>
       <div className="product-grid">
         {filteredProducts.map((product) => (
@@ -95,12 +78,12 @@ const Dashboard = () => {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <span className="price">Rp {product.price.toLocaleString()}</span>
-            <button className="add-to-cart">Add to cart</button> {/* Add to cart button */}
+            <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to cart</button>
             <div className="social-actions">
               <span>Share</span>
               <span>Compare</span>
               <span>Like</span>
-            </div> {/* Social actions */}
+            </div>
           </div>
         ))}
       </div>

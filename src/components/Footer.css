@@ -1,0 +1,91 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background-color: white; /* Background color matching the design */
+    color: #333; /* Dark text color */
+    border-top: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .footer-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .footer-section h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .footer-section address {
+    font-style: normal;
+    color: #757575;
+    margin-top: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    color: #333;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #333; /* Link color */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #000; /* Change color on hover */
+  }
+  
+  .footer-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-section form input[type="email"] {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .footer-section form button {
+    padding: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .footer-section form button:hover {
+    background-color: #333; /* Darker color on hover */
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+    color: #757575;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+  }
+  

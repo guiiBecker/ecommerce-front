@@ -1,0 +1,122 @@
+.related-products {
+    padding: 20px 0;
+  }
+  
+  .related-products h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
+  }
+  
+  /* Estilo para os cards de produtos relacionados */
+  .related-product-card {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .related-product-card img {
+    max-width: 100%;
+    height: 60%; 
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-product-card:hover {
+    background-color: #d6d2d2;
+    opacity: 0.8;
+  }
+  
+  .related-product-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .related-product-card .add-to-cartD,
+  .related-product-card .social-actions {
+    opacity: 0.8;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .related-product-card:hover .add-to-cartD,
+  .related-product-card:hover .social-actions {
+    opacity: 0.8;
+    visibility: visible;
+  }
+  
+  .related-product-card h3 {
+    font-size: 16px; 
+    margin: 10px 0;
+    color: black;
+  }
+  
+  .related-product-card p {
+    color: #757575;
+    font-size: 13px; 
+  }
+  
+  .related-product-card .price {
+    font-size: 14px; 
+    color: black;
+    margin-top: 10px;
+  }
+  
+  .related-product-card .old-price {
+    font-size: 12px;
+    color: #b88e2f;
+    text-decoration: line-through;
+  }
+  
+  .related-product-card .discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6f61;
+    color: white;
+    padding: 3px 8px; 
+    border-radius: 5px;
+    font-size: 10px; 
+  }
+  
+  .related-product-card .new-product {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #6a5acd;
+    color: white;
+    padding: 3px 8px; 
+    border-radius: 5px;
+    font-size: 10px;
+  }
+  
+  .show-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #b88e2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .show-more:hover {
+    background-color: #ff6f61;
+  }
+  

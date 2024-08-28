@@ -114,14 +114,13 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show the add-to-cart button and social actions on hover */
 .product-card:hover .add-to-cartD,
 .product-card:hover .social-actions {
   opacity: 0.8;
   visibility: visible;
 }
 
-/* Add-to-cart button styling */
+
 .add-to-cartD {
   position: absolute;
   top: 50%;

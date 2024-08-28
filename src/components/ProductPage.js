@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../features/cart/cartSlice'
 import axios from 'axios';
 import './ProductPage.css';
-import Facebook from '../assets/images/Vectorface.jpg'
-import Linkedin from '../assets/images/Vectorlink.jpg'
-import Twitter from '../assets/images/Vectortwitter.jpg'
+import Facebook from '../assets/images/Vectorface.jpg';
+import Linkedin from '../assets/images/Vectorlink.jpg';
+import Twitter from '../assets/images/Vectortwitter.jpg';
+import RelatedProducts from './RelatedeProducts';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -104,6 +105,7 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+      <RelatedProducts /> 
     </div>
   );
 };

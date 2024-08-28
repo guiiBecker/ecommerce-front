@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
+import Features from './Features';
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
@@ -114,6 +115,7 @@ const Dashboard = () => {
           </button>
         ))}
       </div>
+      <Features/>
     </div>
   );
 };

@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   right: -100%;
-  width: 320px;
+  width: 450px;
   height: 70%; /* Full height for better UX */
   background-color: white;
   box-shadow: -2px 0px 8px rgba(0, 0, 0, 0.2);

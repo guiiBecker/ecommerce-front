@@ -2,12 +2,21 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleCart, removeItem } from '../features/cart/cartSlice';
 import './CartSidebar.css';
+import { useNavigate } from 'react-router-dom';
 
 const CartSidebar = () => {
   const dispatch = useDispatch();
   const { items, isOpen } = useSelector(state => state.cart);
+  const navigate = useNavigate();
 
   const totalAmount = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+
+  const handleCheckout = () => {
+    dispatch(toggleCart()); 
+    navigate('/cart'); 
+  };
+
 
   return (
     <>
@@ -38,7 +47,7 @@ const CartSidebar = () => {
         </div>
         <div className="cart-sidebar-footer">
           <p>Total: Rs {totalAmount.toLocaleString()}</p>
-          <button className="checkout-button">Checkout</button>
+          <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
         </div>
       </div>
     </>

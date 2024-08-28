@@ -16,10 +16,11 @@
   .cart-items table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
   }
   
   .cart-items th, .cart-items td {
-    text-align: left;
+    text-align: center;
     padding: 15px;
     border-bottom: 1px solid #e0e0e0;
   }
@@ -43,6 +44,7 @@
   .cart-item-quantity {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .cart-item-quantity input {
@@ -50,6 +52,30 @@
     text-align: center;
     margin: 0 10px;
   }
+  .cart-items table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.cart-items td,
+.cart-items th {
+    border: none; /* Remove as bordas das células */
+    padding: 10px; /* Adicione um pouco de padding para espaçamento */
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Remove as bordas do lado esquerdo do botão de quantidade */
+.cart-item .cart-item-quantity input {
+    border-left: none;
+}
+
+/* Estilo para o botão de remover, se necessário */
+.cart-item button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
   
   .cart-totals {
     flex: 1;

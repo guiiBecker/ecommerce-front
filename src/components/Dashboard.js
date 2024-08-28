@@ -79,8 +79,8 @@ const Dashboard = () => {
              <Link to={`/product/${product.id}`} className="product-link">
               <img src={product.imageUrl} alt={product.name} />
               <h3>{product.name}</h3>
-              <p>{product.description}</p>
-              <span className="price">Rp {product.price.toLocaleString()}</span>
+              <p className='desc'>{product.description}</p>
+              <span className="priced">Rp {product.price.toLocaleString()}</span>
             </Link>
             <button className="add-to-cartD" onClick={() => handleAddToCart(product)}>Add to cart</button>
             <div className="social-actions">

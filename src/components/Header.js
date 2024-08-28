@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'; // Assuming you are using a separate CSS file for styling
-import logo from '../assets/images/Meubel House_Logos-05.png'; // Path to your logo image
-import userIcon from '../assets/images/Vectoruser.png'; // Path to your user icon
-import cartIcon from '../assets/images/Vectorcart.png'; // Path to your cart icon
+import './Header.css'; 
+import logo from '../assets/images/Meubel House_Logos-05.png'; 
+import userIcon from '../assets/images/Vectoruser.png'; 
+import cartIcon from '../assets/images/Vectorcart.png';
 import { useDispatch } from 'react-redux';
 import { toggleCart } from '../features/cart/cartSlice';
 
@@ -12,7 +12,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleCartClick = () => {
-    dispatch(toggleCart()); // Toggle the cart sidebar when the icon is clicked
+    dispatch(toggleCart()); 
   };
     return (
       <header className="header">

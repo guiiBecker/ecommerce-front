@@ -27,7 +27,7 @@ const MainLayout = ({ children }) => {
       {!isProductPage && <Banner />}
       <div className={`overlay ${isCartOpen ? 'active' : ''}`} onClick={handleOverlayClick}></div>
       <CartSidebar />
-      <main>
+      <main style={{ position: 'relative', zIndex: 1 }}>
         {children}
       </main>
       {!isProductPage && <Features />}

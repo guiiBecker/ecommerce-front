@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import './Dashboard.css';
 import Features from './Features';
-import { addItem } from '../features/cart/cartSlice'; // Correctly import the addItem action
+import { addItem } from '../features/cart/cartSlice'; 
 import { Link } from 'react-router-dom';
 
 
@@ -65,13 +65,35 @@ const Dashboard = () => {
   };
 
   const handleAddToCart = (product) => {
-    dispatch(addItem(product)); // Dispatch the correct addItem action
+    dispatch(addItem(product)); 
   };
 
   return (
     <div className="dashboard">
       <div className="filter-bar">
-        {/* Filter bar code */}
+      <div className="filter">
+        <i className="icon-filter"></i> 
+        <span>Filter</span>
+    </div>
+    <div className="results">
+        <span>Showing {currentPage * showCount - showCount + 1}-{Math.min(currentPage * showCount, products.length)} of {products.length} results</span>
+    </div>
+    <div className="show">
+        <span>Show</span>
+        <select value={showCount} onChange={handleShowChange}>
+            <option value={16}>16</option>
+            <option value={32}>32</option>
+            <option value={48}>48</option>
+        </select>
+    </div>
+    <div className="sort-by">
+        <span>Sort by</span>
+        <select value={sortOption} onChange={handleSortChange}>
+            <option value="Default">Default</option>
+            <option value="Price">Price</option>
+            <option value="Name">Name</option>
+        </select>
+    </div>
       </div>
       <div className="product-grid">
         {filteredProducts.map((product) => (

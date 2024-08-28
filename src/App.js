@@ -17,7 +17,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Routes>
-          {/* Redireciona a página inicial para o Dashboard */}
+   
           <Route path="/" element={
             <ProtectedRoute>
               <MainLayout>

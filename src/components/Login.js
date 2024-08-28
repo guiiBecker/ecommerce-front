@@ -23,31 +23,30 @@ const Login = () => {
   const navigate = useNavigate();
   
   const handleLogin = async (event) => {
-    event.preventDefault();  // Prevent the default form submission behavior
+    event.preventDefault();  
   
-    console.log('handleLogin called'); // Ensure the function is being triggered
+    console.log('handleLogin called'); 
   
     try {
-      // Call the login API
+  
       const data = await loginUser(email, password);
       console.log('Login Successful, data received:', data);
   
-      // Check if the token exists in the response
       if (data.access_token) {
-        // Save the token in localStorage
+    
         localStorage.setItem('Token', data.access_token);
         console.log('Token saved:', data.access_token);
   
-        // Navigate to the dashboard
+     
         navigate('/dashboard');
         console.log('Navigation to /dashboard');
       } else {
-        // Handle the case where the token is missing
+   
         setError('Login failed. Invalid credentials or missing token.');
         console.error('Login failed. No token found in the response.');
       }
     } catch (error) {
-      // Handle any errors that occur during the login process
+ 
       console.error('Login error:', error);
       setError('Login failed. Please check your credentials.');
     }
@@ -58,7 +57,7 @@ const Login = () => {
       <FormContainer>
         <Title>Welcome back!</Title>
         <p>Enter your credentials to access your account</p>
-        <Form onSubmit={handleLogin}> {/* Attach handleLogin to form's onSubmit */}
+        <Form onSubmit={handleLogin}> 
           <label>Email address</label>
           <Input 
             type="email" 

@@ -114,14 +114,14 @@
   
   .social-share {
     display: flex;
-    align-items: center; /* Aligns the text and icons vertically */
+    align-items: center; 
     margin-top: 20px;
   }
   
   .social-share span {
     font-size: 14px;
     color: #757575;
-    margin-right: 10px; /* Space between "Share" text and icons */
+    margin-right: 10px; 
   }
   
   .social-icons {
@@ -130,8 +130,8 @@
   }
   
   .social-icons img {
-    width: 24px; /* Adjust this size as needed */
-    height: 24px; /* Adjust this size as needed */
+    width: 24px;
+    height: 24px; 
     cursor: pointer;
   }
   

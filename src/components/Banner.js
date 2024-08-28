@@ -1,12 +1,10 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import './Banner.css'; // Assuming you are using a separate CSS file for styling
-import backgroundImage from '../assets/images/banner.png'; // Import your background image
-
+import './Banner.css';
+import backgroundImage from '../assets/images/banner.png'; 
 const Banner = () => {
   const location = useLocation();
 
-  // Define banner content based on the current route
   const getBannerContent = () => {
     switch (location.pathname) {
       case '/dashboard':

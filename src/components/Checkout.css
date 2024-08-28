@@ -59,18 +59,17 @@
 
 .cart-items td,
 .cart-items th {
-    border: none; /* Remove as bordas das células */
-    padding: 10px; /* Adicione um pouco de padding para espaçamento */
+    border: none; 
+    padding: 10px; 
     text-align: left;
     vertical-align: middle;
 }
 
-/* Remove as bordas do lado esquerdo do botão de quantidade */
 .cart-item .cart-item-quantity input {
     border-left: none;
 }
 
-/* Estilo para o botão de remover, se necessário */
+
 .cart-item button {
     background: none;
     border: none;

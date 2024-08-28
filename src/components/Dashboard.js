@@ -94,7 +94,12 @@ const Dashboard = () => {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <span className="price">Rp {product.price.toLocaleString()}</span>
-            <button>Add to cart</button>
+            <button className="add-to-cart">Add to cart</button> {/* Add to cart button */}
+            <div className="social-actions">
+              <span>Share</span>
+              <span>Compare</span>
+              <span>Like</span>
+            </div> {/* Social actions */}
           </div>
         ))}
       </div>

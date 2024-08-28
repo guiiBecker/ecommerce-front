@@ -1,14 +1,36 @@
 .product-page {
-    padding: 20px;
   }
   
   .breadcrumbs {
     font-size: 14px;
     margin-bottom: 20px;
-    color: #757575;
+    color: #333; 
+    display: flex;
+    align-items: center;
+    background-color: #f8f1e6; 
+    padding: 30px 30px; 
+    border-radius: 5px; 
+    width: 100%;
   }
   
+  .breadcrumbs span {
+    margin-right: 8px; 
+    color: #757575; 
+  }
+  
+  .breadcrumbs span:last-child {
+    color: #333; 
+    font-weight: bold; 
+  }
+  
+  .breadcrumbs svg {
+    margin-right: 8px;
+    color: #757575; 
+  }
+  
+  
   .product-details {
+    padding-left: 20px;
     display: flex;
     justify-content: space-between;
   }

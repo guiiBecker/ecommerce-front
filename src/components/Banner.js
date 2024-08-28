@@ -9,16 +9,16 @@ const Banner = () => {
   // Define banner content based on the current route
   const getBannerContent = () => {
     switch (location.pathname) {
-      case '/shop':
-        return { title: 'Shop', subtitle: 'Home > Shop' };
-      case '/about':
-        return { title: 'About Us', subtitle: 'Home > About' };
-      case '/contact':
-        return { title: 'Contact Us', subtitle: 'Home > Contact' };
       case '/dashboard':
-        return { title: 'Dashboard', subtitle: 'Home > Dashboard' };
+        return { title: 'Shop', subtitle: 'Home > Shop' };
+      case '/cart':
+        return { title: 'Cart', subtitle: 'Home > Cart' };
+      case '/checkout':
+        return { title: 'Checkout', subtitle: 'Home > Checkout' };
+      case '/':
+        return { title: 'Shop', subtitle: 'Home > Shop' };
       default:
-        return { title: 'Welcome', subtitle: 'Home' };
+        return { title: 'Shop', subtitle: 'Home > Shop' };
     }
   };
 

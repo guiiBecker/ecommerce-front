@@ -45,6 +45,13 @@ function App() {
           } /> 
           <Route path="/cart" element={<MainLayout><Checkout /></MainLayout>} />
           <Route path="/checkout" element={<MainLayout><BillingDetails /></MainLayout>} /> 
+          <Route path="/shop" element={
+            <ProtectedRoute>
+              <MainLayout>
+                <Dashboard />
+              </MainLayout>
+            </ProtectedRoute>
+          }/>
         </Routes>
       </Router>
     </Provider>

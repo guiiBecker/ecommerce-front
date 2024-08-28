@@ -1,0 +1,53 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .header__logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__logo-image {
+    height: 40px; /* Adjust the size of the logo */
+  }
+  
+  .header__logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px; /* Space between the logo and the company name */
+    color: #000;
+  }
+  
+  .header__nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .header__link {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .header__link:hover {
+    text-decoration: underline;
+  }
+  
+  .header__icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 25px;
+  }
+  
+  .header__icon {
+    height: 12px; 
+    cursor: pointer;
+  }
+  

@@ -6,8 +6,10 @@ import CartSidebar from './CartSidebar';
 import { toggleCart } from '../features/cart/cartSlice'; 
 import Banner from './Banner'
 import Features from './Features';
+import { useLocation } from 'react-router-dom';
 
 const MainLayout = ({ children }) => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const isCartOpen = useSelector((state) => state.cart.isOpen);
 
@@ -16,17 +18,19 @@ const MainLayout = ({ children }) => {
       dispatch(toggleCart());
     }
   };
+  const isProductPage = location.pathname.includes('/product/');
+
 
   return (
     <div>
       <Header />
-      <Banner />
+      {!isProductPage && <Banner />}
       <div className={`overlay ${isCartOpen ? 'active' : ''}`} onClick={handleOverlayClick}></div>
       <CartSidebar />
       <main>
         {children}
       </main>
-      <Features />
+      {!isProductPage && <Features />}
       <Footer />
     </div>
   );

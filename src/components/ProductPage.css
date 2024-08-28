@@ -1,0 +1,137 @@
+.product-page {
+    padding: 20px;
+  }
+  
+  .breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #757575;
+  }
+  
+  .product-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-images {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .main-image {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .product-info {
+    flex: 2;
+  }
+  
+  .product-info h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 24px;
+    color: #ff6f61;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .options {
+    margin-bottom: 20px;
+  }
+  
+  .sizes,
+  .colors {
+    margin-bottom: 15px;
+  }
+  
+  .size-options,
+  .color-options {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .size-options button,
+  .color-options button {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .size-options button.selected,
+  .color-options button.selected {
+    background-color: #ff6f61;
+    color: white;
+  }
+  
+  .quantity-cart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .quantity input {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .add-to-cart {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #e55b51;
+  }
+  
+  .product-meta {
+    margin-top: 20px;
+  }
+  
+  .product-meta p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #757575;
+  }
+  
+  .social-share {
+    display: flex;
+    align-items: center; /* Aligns the text and icons vertically */
+    margin-top: 20px;
+  }
+  
+  .social-share span {
+    font-size: 14px;
+    color: #757575;
+    margin-right: 10px; /* Space between "Share" text and icons */
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons img {
+    width: 24px; /* Adjust this size as needed */
+    height: 24px; /* Adjust this size as needed */
+    cursor: pointer;
+  }
+  

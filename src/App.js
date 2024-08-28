@@ -5,34 +5,32 @@ import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import MainLayout from './components/MainLayout'; 
-
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './store';
-
+import ProductPage from './components/ProductPage';
 function App() {
   return (
     <Provider store={store}>
-    <Router>
-      <Routes>
+      <Router>
+        <Routes>
         
-        <Route path="/" element={<Login />} />
-        
-        
-        <Route path="/signup" element={
-          <MainLayout>
-            <SignUp />
-          </MainLayout>
-        }/>
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={
             <MainLayout>
-              <Dashboard />
+              <SignUp />
             </MainLayout>
-          </ProtectedRoute>
-        }/>
-      </Routes>
-    </Router>
+          }/>
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <MainLayout>
+                <Dashboard />
+              </MainLayout>
+            </ProtectedRoute>
+         }/>
+         <Route path="/product/:id" element={<MainLayout><ProductPage /></MainLayout>} /> 
+        </Routes>
+      </Router>
     </Provider>
   );
 }

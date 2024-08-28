@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import './Dashboard.css';
 import Features from './Features';
 import { addItem } from '../features/cart/cartSlice'; // Correctly import the addItem action
+import { Link } from 'react-router-dom';
+
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
@@ -74,10 +76,12 @@ const Dashboard = () => {
       <div className="product-grid">
         {filteredProducts.map((product) => (
           <div className="product-card" key={product.id}>
-            <img src={product.imageUrl} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <span className="price">Rp {product.price.toLocaleString()}</span>
+             <Link to={`/product/${product.id}`} className="product-link">
+              <img src={product.imageUrl} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              <span className="price">Rp {product.price.toLocaleString()}</span>
+            </Link>
             <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to cart</button>
             <div className="social-actions">
               <span>Share</span>
